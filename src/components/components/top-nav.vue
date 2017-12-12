@@ -1,44 +1,50 @@
 <template>
-<div class="before-login">
-    <router-link :to="{ name: 'FruitSingle'}">
-        <i class="ui-icon-emo"></i>
-        <p>普通水果</p>
-    </router-link>
-    <router-link :to="{ name: 'FruitCombo'}">
-        <i class="ui-icon-wallet"></i>
-        <p>水果套餐</p>
-    </router-link>
-    <router-link :to="{ }">
-        <i class="ui-icon-add-people"></i>
-        <p>注册</p>
-    </router-link>
-    <router-link :to="{ }">
-        <i class="ui-icon-pc"></i>
-        <p>登录</p>
-    </router-link>
-</div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li :class="home"><router-link :to="{ name: 'Index' }">
+                    <i class="glyphicon glyphicon-home"></i>
+                    <p>首页</p>
+                </router-link>
+                </li>
+                <li :class="news"><a href="#">
+                    <i class="glyphicon glyphicon-comment"></i>
+                    <p>消息</p>
+                </a>
+                </li>
+                <li :class="personal"><router-link :to="{ name: 'Login' }">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <p>我的</p>
+                </router-link>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </template>
 
 <script>
 export default {
-  name: 'top-nav'
+  name: 'top-nav',
+  props: [
+    'home',
+    'news',
+    'personal'
+  ]
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.before-login {
-    margin-left:4%;
-    margin-top: 3%;
-    margin-right:0%;
+.navbar-nav i{
+    font-size: 200%;
 }
-.before-login a {
-    display: inline-block;
-    width: 23%;
+.navbar-nav li{
+    width: 10vw;
     text-align: center;
 }
-.before-login a i {
-    color: #00a5e0;
-    font-size: 300%;
+.navbar-nav p{
+    margin-bottom: 0px;
 }
 </style>

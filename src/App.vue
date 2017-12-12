@@ -11,13 +11,14 @@ export default {
 </script>
 
 <style>
-html {
-  background-color: white;
+a:link, a:visited, a:hover{
+  text-decoration: none;
+  cursor: pointer;
 }
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+section{
+  margin-top: 90px;
+}
+body{
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 </style>

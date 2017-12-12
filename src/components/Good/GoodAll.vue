@@ -1,17 +1,15 @@
 <template>
 <div>
-    <ul class="fruit-list ui-grid-halve">
-      <li v-for="(item, index) in fruits">
-        <router-link :to="{ name: 'FruitDetail', params: {id: index}}">
-          <div class="ui-grid-halve-img">
-            <img src="../../../static/apple.jpg">
-          </div>
-          <p>{{ item.name }}</p>
-        </router-link>
-        <em>￥{{ item.price_sell }}</em>
-        <span>￥{{ item.price_origin }}</span>
-      </li>
-    </ul>
+  <div class="good-list row">
+    <div v-for="(item, index) in goods" class="col-sm-4 text-center">
+      <router-link :to="{ name: 'FruitDetail', params: {id: index}}">
+        <img src="../../../static/apple.jpg">
+        <p>{{ item.name }}</p>
+      </router-link>
+      <strong>￥{{ item.price_sell }}</strong>
+      <del>￥{{ item.price_origin }}</del>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -20,44 +18,44 @@ export default {
   name: 'fruit-single',
   data () {
     return {
-      fruits: [
+      goods: [
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         },
         {
-          name: '苹果',
+          name: '旧书',
           price_sell: 6.66,
           price_origin: 8.88
         }
@@ -69,30 +67,29 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.fruit-list li {
+.good-list .col-sm-4 {
   padding:0px 20px 20px;
   background-color: rgba(255,255,255,0.4);
   border-radius: 4px;
   box-shadow: 0px 0px 5px gray;
-  margin-bottom: 3%;
-  width: 42.5vw;
-  height: 42.5vw;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-bottom: 5%;
+  margin-left: 7%;
+  margin-right: 7%;
 }
-.fruit-list li div {
+.good-list div img {
   height: 75%;
   padding-top: 4%;
 }
-.fruit-list li p {
+.good-list div p {
   height: 15%;
+  font-size: 200%;
 }
-.fruit-list li em {
-  font-size: 80%;
+.good-list div strong {
+  font-size: 180%;
 }
-.fruit-list li span {
+.good-list div del {
   text-decoration: line-through;
-  font-size: 50%;
+  font-size: 150%;
   color: grey;
 }
 </style>

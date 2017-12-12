@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import FruitList from './Good/FruitList'
+import GoodList from './Good/GoodList'
 import FruitDetail from './Good/FruitDetail'
-import Order from './Order'
+import User from './User/User'
+import Login from '@/components/User/Login'
 
 Vue.use(Router)
 
@@ -14,11 +15,16 @@ export default new Router({
       path: '/',
       name: 'Index',
       redirect: {
-        name: 'FruitSingle'
+        name: 'GoodIndex'
       }
     },
-    FruitList,
+    GoodList,
     FruitDetail,
-    Order
+    User,
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    }
   ]
 })
