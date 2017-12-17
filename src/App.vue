@@ -21,4 +21,7 @@ section{
 body{
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
+textarea{
+  resize: none;
+}
 </style>

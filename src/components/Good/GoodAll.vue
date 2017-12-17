@@ -67,14 +67,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.good-list .col-sm-4 {
+.good-list div {
   padding:0px 20px 20px;
   background-color: rgba(255,255,255,0.4);
   border-radius: 4px;
   box-shadow: 0px 0px 5px gray;
   margin-bottom: 5%;
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 4%;
+  margin-right: 4%;
 }
 .good-list div img {
   height: 75%;

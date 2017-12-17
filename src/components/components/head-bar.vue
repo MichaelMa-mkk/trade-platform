@@ -4,7 +4,7 @@
     <div class="navbar-header">
       <a onclick="history.back()" class="navbar-brand glyphicon glyphicon-menu-left"></a>
     </div>
-    <p class="navbar-brand title text-center">{{headtext}}</p>
+    <p class="navbar-brand text-center">{{headtext}}</p>
   </div>
 </nav>
 </template>
@@ -18,10 +18,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.title{
-  width: 95vw;
-}
 p{
   margin-bottom: 0px;
+  width: 95vw;
+}
+.navbar-header a{
+  padding-left: 15px;
+  padding-right: 0px;
 }
 </style>

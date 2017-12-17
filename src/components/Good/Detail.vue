@@ -1,13 +1,45 @@
 <template>
 <section>
-  <head-bar headtext="物品详情"></head-bar>
+  <head-bar headtext="宝贝详情"></head-bar>
   <div class="box">
       <h1>{{ good.name }}</h1>
-      <a>{{ good.advertising }}</a>
-      <p>￥{{ good.price_sell }}</p>
+      <h2>{{ good.advertising }}</h2>
+      <p class="inline">￥{{ good.price_sell }}</p>
+      <span>左右</span>
   </div>
-  <div class="container text-center">
-    <img src="../../../static/apple.jpg">
+  <div class="container">
+    <img src="../../../static/apple.jpg" class="center-block">
+    <div class="comment">
+      <h1><strong>评论</strong></h1>
+    </div>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-1 control-label">我也来说一句</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="3" placeholder="请文明评论"></textarea>
+        </div>
+        <button type="button" class="btn btn-info col-sm-1">发表<br/>评论</button>
+      </div>
+    </form>
+    <table class="table table-hover">
+      <tbody>
+        <tr>
+          <td class="name">Mark</td>
+          <td>Otto</td>
+        </tr>
+        <br/>
+        <tr>
+          <td class="name">Jacob</td>
+          <td>Thornton</td>
+        </tr>
+        <br/>
+        <tr>
+          <td class="name">Larry</td>
+          <td>the Bird</td>
+        </tr>
+        <br/>
+      </tbody>
+    </table>
   </div>
 
 </section>
@@ -78,11 +110,32 @@ export default {
   color: orange;
   font-size: 200%;
 }
-.box a{
+.box h2{
     color: gray;
     font-size: large;
 }
-.box h1{
-  
+.inline{
+  display: inline;
+  margin-right: 1%;
+}
+.comment{
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+.name{
+  width: 15%;
+}
+.form-group{
+  margin-top: 15px;
+}
+.form-group label{
+  margin-left: 15px;
+}
+button{
+  font-size: 120%;
+  padding: 1.3%;
+}
+td{
+  word-wrap: break-word;
 }
 </style>
