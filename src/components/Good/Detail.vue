@@ -1,11 +1,13 @@
 <template>
 <section>
   <head-bar headtext="物品详情"></head-bar>
-
   <div class="box">
-      <p>{{ fruit.name }}</p>
-      <a>{{ fruit.advertising }}</a>
-      <h1>￥{{ fruit.price_sell }}</h1>
+      <h1>{{ good.name }}</h1>
+      <a>{{ good.advertising }}</a>
+      <p>￥{{ good.price_sell }}</p>
+  </div>
+  <div class="container text-center">
+    <img src="../../../static/apple.jpg">
   </div>
 
 </section>
@@ -20,9 +22,9 @@ export default {
   },
   data () {
     return {
-      fruit: {
-        name: '苹果',
-        advertising: '广告词',
+      good: {
+        name: '旧书',
+        advertising: '宝贝描述凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数',
         price_sell: 6.66
       }
     }
@@ -36,7 +38,9 @@ export default {
     margin: 20px auto;
     width: 90%;
     min-height: 100px;
-    padding: 10px;
+    padding: 15px;
+    padding-left: 5%;
+    padding-right: 5%;
     position:relative;
     background: -webkit-gradient(linear, 100% 100%, 50% 10%, from(#fff), to(#f3f3f3), color-stop(.1,#fff));
     border: 1px solid #ccc;
@@ -44,7 +48,6 @@ export default {
     -webkit-border-bottom-right-radius: 60px 5px;
 }
 .box:before{
-    content: '';
     width: 98%;
     z-index:-1;
     height: 100%;
@@ -59,7 +62,6 @@ export default {
                         translate(3px,8px)
 }
 .box:after{
-    content: '';
     width: 98%;
     z-index:-1;
     height: 98%;
@@ -72,10 +74,15 @@ export default {
     -webkit-transform: skew(2deg,2deg)
                         translate(-1px,2px)
 }
+.box p{
+  color: orange;
+  font-size: 200%;
+}
 .box a{
     color: gray;
+    font-size: large;
 }
 .box h1{
-    color: orange;
+  
 }
 </style>

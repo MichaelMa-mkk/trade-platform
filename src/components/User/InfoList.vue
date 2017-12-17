@@ -23,7 +23,7 @@
           <router-link :to="{ name: 'UserTrading' }">交易中</router-link>
         </li>
         <li role="presentation">
-          <router-link :to="{ name: '' }">我要发布</router-link>
+          <router-link :to="{ name: 'GoodPublish' }">我要发布</router-link>
         </li>
         <li role="presentation">
           <router-link :to="{ name: 'UserPublish' }">发布成功</router-link>

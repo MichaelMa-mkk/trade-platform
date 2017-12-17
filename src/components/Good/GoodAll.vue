@@ -2,7 +2,7 @@
 <div>
   <div class="good-list row">
     <div v-for="(item, index) in goods" class="col-sm-4 text-center">
-      <router-link :to="{ name: 'FruitDetail', params: {id: index}}">
+      <router-link :to="{ name: 'GoodDetail', params: {id: index}}">
         <img src="../../../static/apple.jpg">
         <p>{{ item.name }}</p>
       </router-link>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'fruit-single',
+  name: 'good-all',
   data () {
     return {
       goods: [

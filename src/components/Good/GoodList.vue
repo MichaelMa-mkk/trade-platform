@@ -2,6 +2,7 @@
 <section class="container">
   <top-nav home="active"></top-nav>
   <router-view></router-view>
+  
 </section>
 </template>
 
@@ -9,7 +10,7 @@
 import TopNav from '@/components/components/top-nav'
 
 export default {
-  name: 'fruit-list',
+  name: 'good-list',
   components: {
     TopNav
   }

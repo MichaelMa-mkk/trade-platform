@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import GoodList from './Good/GoodList'
-import FruitDetail from './Good/FruitDetail'
+import GoodDetail from './Good/GoodDetail'
 import User from './User/User'
 import Login from '@/components/User/Login'
 
@@ -19,7 +19,7 @@ export default new Router({
       }
     },
     GoodList,
-    FruitDetail,
+    ...GoodDetail,
     User,
     {
       path: '/login',

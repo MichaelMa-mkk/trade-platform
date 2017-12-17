@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <router-link :to="{ name: 'GoodIndex' }" class="navbar-brand glyphicon glyphicon-menu-left"></router-link>
+      <a onclick="history.back()" class="navbar-brand glyphicon glyphicon-menu-left"></a>
     </div>
     <p class="navbar-brand title text-center">{{headtext}}</p>
   </div>
