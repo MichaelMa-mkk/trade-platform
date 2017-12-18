@@ -122,6 +122,9 @@ export default {
   },
   components: {
     /*some imported components to register*/
+  },
+  methods: {
+    /*js function*/
   }
 }
 </script>
