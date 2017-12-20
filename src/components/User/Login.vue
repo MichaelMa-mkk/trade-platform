@@ -5,13 +5,13 @@
   <div class="form-group">
     <label class="col-sm-2 control-label">用户名</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="User">
+      <input type="text" class="form-control" id="username" placeholder="User">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2 control-label">密码</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      <input type="password" class="form-control" id="password" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
@@ -28,8 +28,9 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <router-link :to="{ name: 'UserInfo' }" id="temp">
-        <button type="submit" class="btn btn-default">登录</button>
+      <button type="button" @click="login" class="btn btn-default" id="login-button">登录</button>
+      <router-link :to="{ name: 'Register' }">
+        <button type="button" class="btn btn-default">注册</button>
       </router-link>
     </div>
   </div>
@@ -44,13 +45,33 @@ export default {
   name: 'login',
   components: {
     HeadBar
+  },
+  methods: {
+    login () {
+      var pwd = document.getElementById('password').value
+      var name = document.getElementById('username').value
+      var flag = 0
+      for (var user of this.datum.UserList) {
+        if (user.name === name && user.pwd === pwd) {
+          this.datum.LoginId = user.id
+          flag = 1
+          var url = window.location.href
+          url = url.substring(0, url.length - 5)
+          window.location.href = url + 'user/info'
+          break
+        }
+      }
+      if (flag === 0) {
+        alert('用户名或密码错误')
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
-#temp{
-  color: black;
+#login-button{
+  margin-right: 2%;
 }
 </style>
 

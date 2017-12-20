@@ -1,13 +1,12 @@
 <template>
 <div>
   <div class="good-list row">
-    <div v-for="(item, index) in goods" class="col-sm-4 text-center">
-      <router-link :to="{ name: 'GoodDetail', params: {id: index}}">
-        <img src="../../../static/apple.jpg">
+    <div v-for="item in goods" class="col-sm-4 text-center">
+      <router-link :to="{ name: 'GoodDetail', params: {id: item.id} }">
+        <img :src="'../../../static/' + item.name + '.jpg'">
         <p>{{ item.name }}</p>
       </router-link>
       <strong>￥{{ item.price_sell }}</strong>
-      <del>￥{{ item.price_origin }}</del>
     </div>
   </div>
 </div>
@@ -18,78 +17,8 @@ export default {
   name: 'good-all',
   data () {
     return {
-      goods: [
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        },
-        {
-          name: '旧书',
-          price_sell: 6.66,
-          price_origin: 8.88
-        }
-      ]
+      goods: this.datum.GoodList
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.good-list div {
-  padding:0px 20px 20px;
-  background-color: rgba(255,255,255,0.4);
-  border-radius: 4px;
-  box-shadow: 0px 0px 5px gray;
-  margin-bottom: 5%;
-  margin-left: 4%;
-  margin-right: 4%;
-}
-.good-list div img {
-  height: 75%;
-  padding-top: 4%;
-}
-.good-list div p {
-  height: 15%;
-  font-size: 200%;
-}
-.good-list div strong {
-  font-size: 180%;
-}
-.good-list div del {
-  text-decoration: line-through;
-  font-size: 150%;
-  color: grey;
-}
-</style>

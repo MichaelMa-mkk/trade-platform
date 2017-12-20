@@ -3,16 +3,16 @@
   <top-nav home="active"></top-nav>
   <ul class="nav nav-pills nav-stacked navbar-fixed-left">
     <li role="presentation" class="active">
-      <router-link :to="{ name: 'GoodAll' }">所有物品</router-link>
+      <router-link :to="{ name: 'GoodAll' }">所有宝贝</router-link>
     </li>
     <li role="presentation">
-      <router-link :to="{ name: '' }">分类1</router-link>
+      <router-link :to="{ name: 'Category', params: {category: 1} }">分类1</router-link>
     </li>
     <li role="presentation">
-      <router-link :to="{ name: '' }">分类2</router-link>
+      <router-link :to="{ name: 'Category', params: {category: 2} }">分类2</router-link>
     </li>
     <li role="presentation">
-      <router-link :to="{ name: '' }">分类3</router-link>
+      <router-link :to="{ name: 'Category', params: {category: 3} }">分类3</router-link>
     </li>
   </ul>
   <div class="col-sm-1"></div>

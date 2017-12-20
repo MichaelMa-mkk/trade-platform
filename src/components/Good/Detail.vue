@@ -6,9 +6,12 @@
       <h2>{{ good.advertising }}</h2>
       <p class="inline">￥{{ good.price_sell }}</p>
       <span>左右</span>
+      <router-link :to="{ name: 'Message' }">
+        <button type="button" class="btn btn-default pull-right" @click="addmessage">联系卖家</button>
+      </router-link>
   </div>
   <div class="container">
-    <img src="../../../static/apple.jpg" class="center-block">
+    <img :src="'../../../static/' + good.name + '.jpg'" class="center-block">
     <div class="comment">
       <h1><strong>评论</strong></h1>
     </div>
@@ -18,19 +21,18 @@
         <div class="col-sm-8">
           <textarea class="form-control" rows="3" id="comment-content" placeholder="请文明评论"></textarea>
         </div>
-        <button type="button" @click="addcomment" class="btn btn-info col-sm-1">发表<br/>评论</button>
+        <button type="button" @click="addcomment" class="btn btn-info col-sm-1 btn-comment">发表<br/>评论</button>
       </div>
     </form>
     <table class="table table-hover">
       <tbody>
-        <tr v-for="item in comments">
-          <td class="name">{{ item.name }}</td>
-          <td>{{ item.content }}</td>
+        <tr v-for="comment in comments">
+          <td class="name">{{ comment.name }}</td>
+          <td>{{ comment.content }}</td>
         </tr>
       </tbody>
     </table>
   </div>
-
 </section>
 </template>
 
@@ -43,11 +45,7 @@ export default {
   },
   data () {
     return {
-      good: {
-        name: '旧书',
-        advertising: '宝贝描述凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数',
-        price_sell: 6.66
-      },
+      good: this.datum.GoodList[this.$route.params.id],
       comments: [
         {
           name: '马轲',
@@ -65,11 +63,14 @@ export default {
       var content = document.getElementById('comment-content')
       if (content.value !== '') {
         this.comments.push({
-          name: 'new user',
+          name: this.datum.UserList[1].name,
           content: content.value
         })
+        content.value = ''
       }
-      content.value = ''
+    },
+    addmessage () {
+      console.log('addmessage')
     }
   }
 }
@@ -89,33 +90,6 @@ export default {
     border: 1px solid #ccc;
     -webkit-box-shadow: 1px 1px 4px rgba(0,0,0, 0.1);
     -webkit-border-bottom-right-radius: 60px 5px;
-}
-.box:before{
-    width: 98%;
-    z-index:-1;
-    height: 100%;
-    padding: 0 0 1px 0;
-    position: absolute;
-    bottom:0; right:0;
-    background: -webkit-gradient(linear, 0% 20%, 0% 92%, from(#fff), to(#f9f9f9), color-stop(.1,#fff));
-    border: 1px solid #ccc;
-    -webkit-box-shadow: 1px 1px 8px rgba(0,0,0, 0.1);
-    -webkit-border-bottom-right-radius: 60px 5px;
-    -webkit-transform: skew(2deg,2deg)
-                        translate(3px,8px)
-}
-.box:after{
-    width: 98%;
-    z-index:-1;
-    height: 98%;
-    padding: 0 0 1px 0;
-    position: absolute;
-    bottom:0; right:0;
-    background: -webkit-gradient(linear, 0% 20%, 0% 100%, from(#f3f3f3), to(#f6f6f6), color-stop(.1,#fff));
-    border: 1px solid #ccc;
-    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0, 0.1);
-    -webkit-transform: skew(2deg,2deg)
-                        translate(-1px,2px)
 }
 .box p{
   color: orange;
@@ -142,7 +116,7 @@ export default {
 .form-group label{
   margin-left: 15px;
 }
-button{
+.btn-comment{
   font-size: 120%;
   padding: 1.3%;
 }

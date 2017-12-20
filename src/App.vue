@@ -24,4 +24,29 @@ body{
 textarea{
   resize: none;
 }
+.good-list div {
+  padding:0px 20px 20px;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px gray;
+  margin-bottom: 5%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.good-list div img {
+  height: 75%;
+  padding-top: 4%;
+}
+.good-list div p {
+  height: 15%;
+  font-size: 200%;
+}
+.good-list div strong {
+  font-size: 180%;
+}
+.good-list div del {
+  text-decoration: line-through;
+  font-size: 150%;
+  color: grey;
+}
 </style>
