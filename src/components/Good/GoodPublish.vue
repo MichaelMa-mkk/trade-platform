@@ -46,7 +46,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <router-link :to="{ name: 'UserPublish' }">
+        <router-link :to="{ name: 'UserInfo' }">
           <button type="submit" class="btn btn-info">提交</button>
         </router-link>
       </div>

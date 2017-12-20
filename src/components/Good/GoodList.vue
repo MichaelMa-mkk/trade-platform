@@ -1,7 +1,7 @@
 <template>
 <section>
   <top-nav home="active"></top-nav>
-  <ul class="nav nav-pills nav-stacked col-sm-1">
+  <ul class="nav nav-pills nav-stacked navbar-fixed-left">
     <li role="presentation" class="active">
       <router-link :to="{ name: 'GoodAll' }">所有物品</router-link>
     </li>
@@ -15,6 +15,7 @@
       <router-link :to="{ name: '' }">分类3</router-link>
     </li>
   </ul>
+  <div class="col-sm-1"></div>
   <div class="col-sm-11">
     <router-view/>
   </div>
@@ -52,5 +53,9 @@ export default {
 <style scoped>
 section{
   margin-top: 100px;
+}
+.navbar-fixed-left{
+  position: fixed;
+  left: 0;
 }
 </style>

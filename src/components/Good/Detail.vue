@@ -14,30 +14,19 @@
     </div>
     <form class="form-horizontal">
       <div class="form-group">
-        <label class="col-sm-1 control-label">我也来说一句</label>
+        <label class="col-sm-1 control-label">我说一句</label>
         <div class="col-sm-8">
-          <textarea class="form-control" rows="3" placeholder="请文明评论"></textarea>
+          <textarea class="form-control" rows="3" id="comment-content" placeholder="请文明评论"></textarea>
         </div>
-        <button type="button" class="btn btn-info col-sm-1">发表<br/>评论</button>
+        <button type="button" @click="addcomment" class="btn btn-info col-sm-1">发表<br/>评论</button>
       </div>
     </form>
     <table class="table table-hover">
       <tbody>
-        <tr>
-          <td class="name">Mark</td>
-          <td>Otto</td>
+        <tr v-for="item in comments">
+          <td class="name">{{ item.name }}</td>
+          <td>{{ item.content }}</td>
         </tr>
-        <br/>
-        <tr>
-          <td class="name">Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <br/>
-        <tr>
-          <td class="name">Larry</td>
-          <td>the Bird</td>
-        </tr>
-        <br/>
       </tbody>
     </table>
   </div>
@@ -58,7 +47,29 @@ export default {
         name: '旧书',
         advertising: '宝贝描述凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数凑字数',
         price_sell: 6.66
+      },
+      comments: [
+        {
+          name: '马轲',
+          content: '这东西海星'
+        },
+        {
+          name: '宋逸凡',
+          content: '这玩意太辣鸡'
+        }
+      ]
+    }
+  },
+  methods: {
+    addcomment () {
+      var content = document.getElementById('comment-content')
+      if (content.value !== '') {
+        this.comments.push({
+          name: 'new user',
+          content: content.value
+        })
       }
+      content.value = ''
     }
   }
 }
@@ -137,5 +148,6 @@ button{
 }
 td{
   word-wrap: break-word;
+  margin-top: 10px;
 }
 </style>
