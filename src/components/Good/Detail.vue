@@ -55,10 +55,12 @@ export default {
         comments.push(comment)
       }
     }
-    for (var goodid of this.datum.UserList[this.datum.LoginId].star) {
-      if (goodid === parseInt(this.$route.params.id)) {
-        isstar = true
-        break
+    if (this.datum.LoginId !== '') {
+      for (var goodid of this.datum.UserList[this.datum.LoginId].star) {
+        if (goodid === parseInt(this.$route.params.id)) {
+          isstar = true
+          break
+        }
       }
     }
     return {
@@ -90,6 +92,7 @@ export default {
     },
     star () {
       this.isstar = !this.isstar
+      if (this.datum.LoginId === '') return
       if (!this.isstar) {
         for (var index in this.users[this.datum.LoginId].star) {
           if (this.users[this.datum.LoginId].star[index] === this.good.id) {
