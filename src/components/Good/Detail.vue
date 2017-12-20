@@ -6,9 +6,13 @@
       <h2>{{ good.advertising }}</h2>
       <p class="inline">￥{{ good.price_sell }}</p>
       <span>左右</span>
-      <router-link :to="{ name: 'Message' }">
+      <a onclick="$('#dialog').popover('show');" data-trigger="focus" class="pull-right" data-toggle="popover" data-container="body" id="dialog" data-placement="bottom" :data-content="text">
         <button type="button" class="btn btn-default pull-right" @click="addmessage">联系卖家</button>
-      </router-link>
+      </a>
+      <button v-if="isstar" type="button" class="btn btn-warning pull-right active" @click="star">已收藏</button>
+      <button v-else type="button" class="btn btn-warning pull-right" @click="star">收藏
+        <i class="glyphicon glyphicon-star"></i>
+      </button>
   </div>
   <div class="container">
     <img :src="'../../../static/' + good.name + '.jpg'" class="center-block">
@@ -27,7 +31,7 @@
     <table class="table table-hover">
       <tbody>
         <tr v-for="comment in comments">
-          <td class="name">{{ comment.name }}</td>
+          <td class="name">{{ users[comment.userid].name }}</td>
           <td>{{ comment.content }}</td>
         </tr>
       </tbody>
@@ -44,33 +48,64 @@ export default {
     HeadBar
   },
   data () {
+    var comments = []
+    var isstar = false
+    for (var comment of this.datum.CommentList) {
+      if (comment.goodid === this.$route.params.id) {
+        comments.push(comment)
+      }
+    }
+    for (var goodid of this.datum.UserList[this.datum.LoginId].star) {
+      if (goodid === parseInt(this.$route.params.id)) {
+        isstar = true
+        break
+      }
+    }
     return {
+      text: this.datum.LoginId !== '' ? '已经向卖家发送站内私信啦' : '请先登录',
       good: this.datum.GoodList[this.$route.params.id],
-      comments: [
-        {
-          name: '马轲',
-          content: '这东西海星'
-        },
-        {
-          name: '宋逸凡',
-          content: '这玩意太辣鸡'
-        }
-      ]
+      comments: comments,
+      users: this.datum.UserList,
+      isstar: isstar
     }
   },
   methods: {
     addcomment () {
-      var content = document.getElementById('comment-content')
-      if (content.value !== '') {
-        this.comments.push({
-          name: this.datum.UserList[1].name,
-          content: content.value
-        })
-        content.value = ''
+      if (this.datum.LoginId === '') alert('请先登录')
+      else {
+        var content = document.getElementById('comment-content')
+        if (content.value !== '') {
+          this.comments.push({
+            userid: this.datum.LoginId,
+            content: content.value
+          })
+          this.datum.CommentList.push({
+            userid: this.datum.LoginId,
+            content: content.value,
+            goodid: this.good.id
+          })
+          content.value = ''
+        }
+      }
+    },
+    star () {
+      this.isstar = !this.isstar
+      if (!this.isstar) {
+        for (var index in this.users[this.datum.LoginId].star) {
+          if (this.users[this.datum.LoginId].star[index] === this.good.id) {
+            this.users[this.datum.LoginId].star.splice(index, 1)
+          }
+        }
+      } else {
+        this.users[this.datum.LoginId].star.push(this.good.id)
       }
     },
     addmessage () {
-      console.log('addmessage')
+      this.datum.MessageList.push({
+        userid: this.datum.LoginId,
+        goodid: this.good.id,
+        status: 0
+      })
     }
   }
 }
@@ -123,5 +158,8 @@ export default {
 td{
   word-wrap: break-word;
   margin-top: 10px;
+}
+#dialog{
+  margin-left: 2%;
 }
 </style>

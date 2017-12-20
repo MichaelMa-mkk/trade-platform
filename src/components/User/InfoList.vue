@@ -19,9 +19,9 @@
         <li role="presentation">
           <router-link :to="{ name: 'UserTraded' }">交易成功</router-link>
         </li>
-        <li role="presentation">
+        <!--<li role="presentation">
           <router-link :to="{ name: 'UserTrading' }">交易中</router-link>
-        </li>
+        </li>-->
         <li role="presentation">
           <router-link :to="{ name: 'GoodPublish' }">我要发布</router-link>
         </li>
@@ -37,7 +37,7 @@
       <router-link :to="{ name: 'UserComment' }">我的评论</router-link>
     </li>
   </ul>
-  <div class="col-sm-10">
+  <div class="col-sm-8">
     <router-view/>
   </div>
 </section>
@@ -93,6 +93,9 @@ img{
 .mini li a{
   color: purple;
   font-size: smaller;
+}
+.col-sm-8{
+  margin-top: 30px;
 }
 </style>
 

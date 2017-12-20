@@ -1,17 +1,17 @@
 <template>
 <section class="container">
   <head-bar headtext="发布宝贝"></head-bar>
-  <form class="form-horizontal">
+  <form class="form-horizontal" v-show="login">
     <div class="form-group">
       <label class="col-sm-2 control-label">宝贝名称</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" placeholder="名称">
+        <input type="text" class="form-control" placeholder="名称" id="name">
       </div>
     </div>
     <div class="form-group">
       <label class="col-sm-2 control-label">宝贝描述</label>
       <div class="col-sm-10">
-        <textarea class="form-control" rows="5" placeholder="描述"></textarea>
+        <textarea class="form-control" rows="5" placeholder="描述" id="advertising"></textarea>
       </div>
     </div>
     <div class="form-group">
@@ -19,7 +19,7 @@
       <div class="col-sm-10">
         <div class="input-group col-sm-2">
           <div class="input-group-addon">￥</div>
-          <input type="text" class="form-control" placeholder="价格">
+          <input type="text" class="form-control" placeholder="价格" id="price">
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
     <div class="form-group">
       <label class="col-sm-2 control-label">宝贝分类</label>
       <div class="col-sm-10">
-        <select class="form-control">
+        <select class="form-control" id="category">
           <option>分类1</option>
           <option>分类2</option>
           <option>分类3</option>
@@ -46,9 +46,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <router-link :to="{ name: 'UserInfo' }">
-          <button type="submit" class="btn btn-info">提交</button>
-        </router-link>
+        <button type="button" class="btn btn-info" @click="submit">提交</button>
       </div>
     </div>
   </form>
@@ -62,6 +60,34 @@ export default {
   name: 'good-publish',
   components: {
     HeadBar
+  },
+  data () {
+    return {
+      login: this.datum.LoginId !== ''
+    }
+  },
+  methods: {
+    submit () {
+      var name = document.getElementById('name').value
+      var advertising = document.getElementById('advertising').value
+      var price = document.getElementById('price').value
+      var category = document.getElementById('category').value
+      if (name === '' || advertising === '' || price === '') {
+        alert('信息填写有遗漏')
+        return
+      }
+      this.datum.GoodList.push({
+        name: name,
+        advertising: advertising,
+        price_sell: parseFloat(price),
+        category: parseInt(category.substring(2)),
+        id: this.datum.GoodList.length,
+        userid: this.datum.LoginId
+      })
+      var url = window.location.href
+      url = url.substring(0, url.length - 12)
+      window.location.href = url + 'user/info'
+    }
   }
 }
 </script>

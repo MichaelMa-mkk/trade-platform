@@ -36,11 +36,9 @@ export default {
   ],
   data () {
     var tot = 0
-    if (this.datum.LoginId !== '') {
-      for (var message of this.datum.MessageList) {
-        if (message.status === 0) {
-          tot++
-        }
+    for (var message of this.datum.MessageList) {
+      if (message.status === 0 && this.datum.LoginId === this.datum.GoodList[message.goodid].userid) {
+        tot++
       }
     }
     return {
@@ -51,7 +49,6 @@ export default {
     check () {
       var url = window.location.href
       url = url.substring(0, url.indexOf('#/'))
-      console.log(url)
       if (this.datum.LoginId === '') {
         window.location.href = url + '#/login'
       } else {
@@ -62,7 +59,6 @@ export default {
   watch: {
     'datum.MessageList': {
       handler: function (val, oldval) {
-        console.log('update')
         this.tot = 0
         for (var message of this.datum.MessageList) {
           if (message.status === 0) {

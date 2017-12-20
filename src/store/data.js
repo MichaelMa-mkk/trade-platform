@@ -5,7 +5,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 1,
     id: 0,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书1',
@@ -21,7 +21,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 2,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书3',
@@ -29,7 +29,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 3,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书4',
@@ -37,7 +37,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 4,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书5',
@@ -45,7 +45,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 5,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书6',
@@ -53,7 +53,7 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 6,
-    userid: 0
+    userid: 1
   },
   {
     name: '旧书7',
@@ -61,20 +61,18 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 7,
-    userid: 0
+    userid: 1
   }
 ]
 var MessageList = [
   {
     userid: 0,
     goodid: 0,
-    type: 0, // 0表示有买家向你联系，1表示你向卖家联系
     status: 0 // 0表示未读，1表示已读
   },
   {
     userid: 0,
     goodid: 1,
-    type: 1,
     status: 0
   }
 ]
@@ -83,16 +81,50 @@ var UserList = [
     id: 0,
     name: '宋逸凡',
     contact: 'QQ888888888',
-    pwd: 'a12345678'
+    pwd: 'a12345678',
+    star: []
   },
   {
     id: 1,
     name: 'newuser',
     contact: '',
-    pwd: '123'
+    pwd: '123',
+    star: []
   }
 ]
 var LoginId = ''
+var CommentList = [
+  {
+    userid: 0,
+    content: '这东西海星',
+    goodid: 0
+  },
+  {
+    userid: 0,
+    content: '这玩意太辣鸡',
+    goodid: 1
+  },
+  {
+    userid: 0,
+    content: '这东西海星',
+    goodid: 2
+  },
+  {
+    userid: 0,
+    content: '这玩意太辣鸡',
+    goodid: 3
+  },
+  {
+    userid: 0,
+    content: '这东西海星',
+    goodid: 4
+  },
+  {
+    userid: 0,
+    content: '这玩意太辣鸡',
+    goodid: 5
+  }
+]
 export default {
-  GoodList, MessageList, UserList, LoginId
+  GoodList, MessageList, UserList, LoginId, CommentList
 }

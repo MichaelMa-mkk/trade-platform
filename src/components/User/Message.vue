@@ -13,7 +13,7 @@
           <tr>
             <td class="col-sm-3">买家姓名：{{ users[message.userid].name }}</td>
             <td class="col-sm-4">买家联系方式：{{ users[message.userid].contact }}</td>
-            <td>相关宝贝：<router-link :to="{ name: '' }">{{ goods[message.goodid].name }}</router-link></td>
+            <td>相关宝贝：{{ goods[message.goodid].name }}</td>
           </tr>
         </tbody>
       </table>
@@ -37,8 +37,14 @@ export default {
     TopNav
   },
   data () {
+    var messages = []
+    for (var message of this.datum.MessageList) {
+      if (this.datum.GoodList[message.goodid].userid === this.datum.LoginId) {
+        messages.push(message)
+      }
+    }
     return {
-      messages: this.datum.MessageList,
+      messages: messages,
       goods: this.datum.GoodList,
       users: this.datum.UserList,
       login: this.datum.LoginId !== ''
