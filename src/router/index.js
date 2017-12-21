@@ -7,6 +7,7 @@ import User from './User/User'
 import Register from '@/components/User/Register'
 import Login from '@/components/User/Login'
 import Message from '@/components/User/Message'
+import UserView from '@/components/User/InfoView'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/message',
       name: 'Message',
       component: Message
+    },
+    {
+      path: '/userview/:id',
+      name: 'UserView',
+      component: UserView
     }
   ]
 })

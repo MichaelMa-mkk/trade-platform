@@ -19,7 +19,7 @@ export default {
     var list = this.datum.GoodList
     var goods = []
     for (var good of list) {
-      if (parseInt(good.category) === parseInt(this.$route.params.category)) {
+      if (good.category === parseInt(this.$route.params.category) && good.status === 0) {
         goods.push(good)
       }
     }
@@ -32,7 +32,7 @@ export default {
       var list = this.datum.GoodList
       this.goods = []
       for (var good of list) {
-        if (parseInt(good.category) === parseInt(this.$route.params.category)) {
+        if (good.category === parseInt(this.$route.params.category)) {
           this.goods.push(good)
         }
       }

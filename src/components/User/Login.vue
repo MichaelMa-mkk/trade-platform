@@ -28,7 +28,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="button" @click="login" class="btn btn-default" id="login-button">登录</button>
+        <button type="submit" @click="login" class="btn btn-default" id="login-button">登录</button>
         <router-link :to="{ name: 'Register' }">
           <button type="button" class="btn btn-default">注册</button>
         </router-link>

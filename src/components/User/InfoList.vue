@@ -1,12 +1,11 @@
 <template>
 <section>
   <top-nav personal="active"></top-nav>
-  <!--<img src="" class="img-circle">-->
-  <ul class="nav nav-pills nav-stacked col-sm-2">
-    <li role="presentation" class="active">
+  <ul class="nav nav-pills nav-stacked navbar-fixed-left">
+    <li role="presentation" id="UserInfo">
       <router-link :to="{ name: 'UserInfo' }">我的信息</router-link>
     </li>
-    <li role="presentation">
+    <li role="presentation" id="UserStar">
       <router-link :to="{ name: 'UserStar' }">我的收藏</router-link>
     </li>
     <li>
@@ -16,27 +15,28 @@
         </a>
       </li>
       <ul class="nav nav-pills nav-stacked mini hide">
-        <li role="presentation">
+        <li role="presentation" id="UserTraded">
           <router-link :to="{ name: 'UserTraded' }">交易成功</router-link>
         </li>
-        <!--<li role="presentation">
+        <!--<li role="presentation" id="UserTrading">
           <router-link :to="{ name: 'UserTrading' }">交易中</router-link>
         </li>-->
-        <li role="presentation">
+        <li role="presentation" id="GoodPublish">
           <router-link :to="{ name: 'GoodPublish' }">我要发布</router-link>
         </li>
-        <li role="presentation">
+        <li role="presentation" id="UserPublish">
           <router-link :to="{ name: 'UserPublish' }">发布成功</router-link>
         </li>
       </ul>
     </li>
-    <li role="presentation">
+    <li role="presentation" id="UserEval">
       <router-link :to="{ name: 'UserEval' }">我的评价</router-link>
     </li>
-    <li role="presentation">
+    <li role="presentation" id="UserComment">
       <router-link :to="{ name: 'UserComment' }">我的评论</router-link>
     </li>
   </ul>
+  <div class="col-sm-2"></div>
   <div class="col-sm-8">
     <router-view/>
   </div>
@@ -78,6 +78,18 @@ export default {
         }
       }
     }
+    document.getElementById(this.$route.name).classList.add('active')
+  },
+  watch: {
+    '$route.name': function () {
+      var temp = document.getElementsByClassName('active')
+      for (var item of temp) {
+        if (item.getAttribute('role')) {
+          item.classList.remove('active')
+        }
+      }
+      document.getElementById(this.$route.name).classList.add('active')
+    }
   }
 }
 </script>
@@ -96,6 +108,10 @@ img{
 }
 .col-sm-8{
   margin-top: 30px;
+}
+.navbar-fixed-left{
+  position: fixed;
+  left: 0;
 }
 </style>
 

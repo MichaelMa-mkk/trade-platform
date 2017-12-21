@@ -6,9 +6,13 @@
       <h2>{{ good.advertising }}</h2>
       <p class="inline">￥{{ good.price_sell }}</p>
       <span>左右</span>
-      <a onclick="$('#dialog').popover('show');" data-trigger="focus" class="pull-right" data-toggle="popover" data-container="body" id="dialog" data-placement="bottom" :data-content="text">
+      <router-link :to="{ name: 'UserView', params: {id: good.userid} }">
+        <button type="button" class="btn btn-info pull-right">卖家信息</button>
+      </router-link>
+      <a v-if="good.status === 0" onclick="$('#dialog').popover('show');" data-trigger="focus" class="pull-right" data-toggle="popover" data-container="body" id="dialog" data-placement="bottom" :data-content="text">
         <button type="button" class="btn btn-default pull-right" @click="addmessage">联系卖家</button>
       </a>
+      <a v-else class="btn btn-default disabled pull-right" role="button">已出售</a>
       <button v-if="isstar" type="button" class="btn btn-warning pull-right active" @click="star">已收藏</button>
       <button v-else type="button" class="btn btn-warning pull-right" @click="star">收藏
         <i class="glyphicon glyphicon-star"></i>
@@ -162,7 +166,8 @@ td{
   word-wrap: break-word;
   margin-top: 10px;
 }
-#dialog{
+#dialog, .disabled{
   margin-left: 2%;
+  margin-right: 2%;
 }
 </style>

@@ -5,7 +5,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 1,
     id: 0,
-    userid: 1
+    userid: 1,
+    status: 0 // 0表示在售，1表示已售出
   },
   {
     name: '旧书1',
@@ -13,7 +14,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 1,
-    userid: 1
+    userid: 1,
+    status: 0
   },
   {
     name: '旧书2',
@@ -21,7 +23,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 2,
-    userid: 1
+    userid: 1,
+    status: 0
   },
   {
     name: '旧书3',
@@ -29,7 +32,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 3,
-    userid: 1
+    userid: 1,
+    status: 0
   },
   {
     name: '旧书4',
@@ -37,7 +41,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 2,
     id: 4,
-    userid: 1
+    userid: 1,
+    status: 0
   },
   {
     name: '旧书5',
@@ -45,7 +50,8 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 5,
-    userid: 1
+    userid: 1,
+    status: 0
   },
   {
     name: '旧书6',
@@ -53,7 +59,9 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 6,
-    userid: 1
+    userid: 1,
+    status: 1,
+    to: 0
   },
   {
     name: '旧书7',
@@ -61,7 +69,9 @@ var GoodList = [
     price_sell: 6.66,
     category: 3,
     id: 7,
-    userid: 1
+    userid: 0,
+    status: 1,
+    to: 1
   }
 ]
 var MessageList = [
@@ -125,6 +135,22 @@ var CommentList = [
     goodid: 5
   }
 ]
+var EvalList = [
+  {
+    belong: 1,
+    to: 0,
+    goodid: 7,
+    level: 5,
+    content: ''
+  },
+  {
+    belong: 0,
+    to: 1,
+    goodid: 7,
+    level: 5,
+    content: ''
+  }
+]
 export default {
-  GoodList, MessageList, UserList, LoginId, CommentList
+  GoodList, MessageList, UserList, LoginId, CommentList, EvalList
 }

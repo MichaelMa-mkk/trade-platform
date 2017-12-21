@@ -38,9 +38,9 @@
       <label class="col-sm-2 control-label">宝贝分类</label>
       <div class="col-sm-10">
         <select class="form-control" id="category">
-          <option>分类1</option>
-          <option>分类2</option>
-          <option>分类3</option>
+          <option value="1">分类1</option>
+          <option value="2">分类2</option>
+          <option value="3">分类3</option>
         </select>
       </div>
     </div>
@@ -80,13 +80,14 @@ export default {
         name: name,
         advertising: advertising,
         price_sell: parseFloat(price),
-        category: parseInt(category.substring(2)),
+        category: parseInt(category),
         id: this.datum.GoodList.length,
-        userid: this.datum.LoginId
+        userid: this.datum.LoginId,
+        status: 0
       })
       var url = window.location.href
       url = url.substring(0, url.length - 12)
-      window.location.href = url + 'user/info'
+      window.location.href = url + 'user/publish'
     }
   }
 }

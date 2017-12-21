@@ -50,7 +50,8 @@ export default {
             id: len,
             name: name,
             pwd: pwd,
-            contact: ''
+            contact: '',
+            star: []
           })
           var url = window.location.href
           url = url.substring(0, url.length - 8)

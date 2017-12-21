@@ -16,8 +16,14 @@
 export default {
   name: 'good-all',
   data () {
+    var goods = []
+    for (var good of this.datum.GoodList) {
+      if (good.status === 0) {
+        goods.push(good)
+      }
+    }
     return {
-      goods: this.datum.GoodList
+      goods: goods
     }
   }
 }
