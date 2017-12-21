@@ -170,4 +170,8 @@ td{
   margin-left: 2%;
   margin-right: 2%;
 }
+img{
+  height: 50%;
+  width: 50%;
+}
 </style>

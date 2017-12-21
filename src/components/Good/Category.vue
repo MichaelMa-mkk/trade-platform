@@ -32,7 +32,7 @@ export default {
       var list = this.datum.GoodList
       this.goods = []
       for (var good of list) {
-        if (good.category === parseInt(this.$route.params.category)) {
+        if (good.category === parseInt(this.$route.params.category) && good.status === 0) {
           this.goods.push(good)
         }
       }

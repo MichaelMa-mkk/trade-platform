@@ -36,17 +36,13 @@ textarea{
 .good-list div img {
   height: 75%;
   padding-top: 4%;
+  width: 75%;
 }
 .good-list div p {
   height: 15%;
-  font-size: 200%;
+  font-size: 130%;
 }
 .good-list div strong {
-  font-size: 180%;
-}
-.good-list div del {
-  text-decoration: line-through;
   font-size: 150%;
-  color: grey;
 }
 </style>

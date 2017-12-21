@@ -133,6 +133,7 @@ var CommentList = [
     userid: 0,
     content: '可以再便宜点吗？',
     goodid: 5
+  }
 ]
 var EvalList = [
   {
