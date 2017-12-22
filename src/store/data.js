@@ -21,7 +21,7 @@ var GoodList = [
     name: '适马85 1.4佳能镜头',
     advertising: '适马85 1.4佳能口老款 成色极新的适马85 1.4老款，唯一的不足之处是前镜片中心有一点状脱膜，送一片B+W金圈uv镜作为补偿。箱说齐全，两个遮光罩都在。2999不刀。',
     price_sell: 2999,
-    category: 2,
+    category: 6,
     id: 2,
     userid: 1,
     status: 0
@@ -30,7 +30,7 @@ var GoodList = [
     name: 'promade滑板',
     advertising: 'promade专业板400出。520入于实体店。只用过两次。',
     price_sell: 400,
-    category: 2,
+    category: 7,
     id: 3,
     userid: 1,
     status: 0
@@ -39,7 +39,7 @@ var GoodList = [
     name: 'Swell木纹保温杯',
     advertising: 'Swell木纹保温杯，可保冷，全新。',
     price_sell: 100,
-    category: 2,
+    category: 3,
     id: 4,
     userid: 1,
     status: 0
@@ -48,7 +48,7 @@ var GoodList = [
     name: '天龙D7200国行旗舰头戴式大耳机',
     advertising: '天龙D7200国行旗舰头戴式大耳机99新出手 该耳机不用多说，天龙的国行最新旗舰大耳机D7200，封闭式耳机，隔音效果非常好，声音素质和听感属于旗舰级别。自带7N单晶铜高品质耳机线（如图所示），照片中清晰的显示着插头上有7NOFC字样，也就是说，基本不用换升级线了，原线素质就很好。耳机保护的非常好，盒子包装配件和新的没有区别。最后说一下推力，这个耳机很好推，直推压力也不大。甚至可以作为便携耳机出街，在家有条件上耳放效果更好。有意的来，练习大刀的勿扰。官方保修。',
     price_sell: 4300,
-    category: 3,
+    category: 10,
     id: 5,
     userid: 1,
     status: 0
@@ -57,7 +57,7 @@ var GoodList = [
     name: 'qdc8 hifi公模耳机',
     advertising: '新版qdc8 hifi公模耳机。帮朋友出新版qdc8 HiFi公模，2017年9月份买的，在保，全部加起来还未听够10小时，耳机和配件基本全新，没任何问题，声音都还未煲开，没修过没改过模，不议价，不包邮，需要直接拍下。。',
     price_sell: 6600,
-    category: 3,
+    category: 10,
     id: 6,
     userid: 1,
     status: 1,
@@ -67,7 +67,7 @@ var GoodList = [
     name: '希捷3T 3.5英寸硬盘',
     advertising: '几乎全新的希捷3T 3.5英寸硬盘 带硬盘盒 酷鱼 台式机硬盘。买了小半年，当作电影仓库盘用的，就放了2T我比较喜欢的电影，所以基本没通电几次。因为又买了一个2.5英寸的，故二手出售，福利：可以装满需要的资源（你提要求，任意，基本都能给你找到）可小刀，产品型号：希捷(SEAGATE)酷鱼系列 3TB 7200转64M SATA3 台式机机械硬盘(ST3000DM008)+优越者硬盘盒。入手渠道：京东。新旧程度：9.5成。规格尺寸：3.5英寸 台式机硬盘。使用感受：速度快，噪音小，就是插电不太方便',
     price_sell: 499,
-    category: 3,
+    category: 1,
     id: 7,
     userid: 0,
     status: 1,
@@ -153,16 +153,44 @@ var EvalList = [
 ]
 var CategoryList = [
   {
-    name: '分类001',
+    name: '电子产品',
     id: 1
   },
   {
-    name: '分类002',
+    name: '交通工具',
     id: 2
   },
   {
-    name: '分类003',
+    name: '生活用品',
     id: 3
+  },
+  {
+    name: '学习用品',
+    id: 4
+  },
+  {
+    name: '动漫/周边',
+    id: 5
+  },
+  {
+    name: '玩具/乐器',
+    id: 6
+  },
+  {
+    name: '运动户外',
+    id: 7
+  },
+  {
+    name: '演出门票',
+    id: 8
+  },
+  {
+    name: '衣物鞋帽',
+    id: 9
+},
+  {
+    name: '其他',
+    id: 10
   }
 ]
 export default {
