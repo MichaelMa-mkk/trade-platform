@@ -151,6 +151,20 @@ var EvalList = [
     content: ''
   }
 ]
+var CategoryList = [
+  {
+    name: '分类001',
+    id: 1
+  },
+  {
+    name: '分类002',
+    id: 2
+  },
+  {
+    name: '分类003',
+    id: 3
+  }
+]
 export default {
-  GoodList, MessageList, UserList, LoginId, CommentList, EvalList
+  GoodList, MessageList, UserList, LoginId, CommentList, EvalList, CategoryList
 }

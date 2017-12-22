@@ -38,9 +38,8 @@
       <label class="col-sm-2 control-label">宝贝分类</label>
       <div class="col-sm-10">
         <select class="form-control" id="category">
-          <option value="1">分类1</option>
-          <option value="2">分类2</option>
-          <option value="3">分类3</option>
+          <option value="" disabled selected>请选择</option>
+          <option v-for="category in categories" :value="category.id">{{ category.name }}</option>
         </select>
       </div>
     </div>
@@ -63,7 +62,8 @@ export default {
   },
   data () {
     return {
-      login: this.datum.LoginId !== ''
+      login: this.datum.LoginId !== '',
+      categories: this.datum.CategoryList
     }
   },
   methods: {
@@ -72,7 +72,7 @@ export default {
       var advertising = document.getElementById('advertising').value
       var price = document.getElementById('price').value
       var category = document.getElementById('category').value
-      if (name === '' || advertising === '' || price === '') {
+      if (name === '' || advertising === '' || price === '' || category === '') {
         alert('信息填写有遗漏')
         return
       }

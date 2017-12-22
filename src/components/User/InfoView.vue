@@ -27,6 +27,7 @@
         <th>评价人</th>
         <th>评价等级</th>
         <th>评价内容</th>
+        <th>相关宝贝</th>
       </tr>
     </thead>
     <tbody>
@@ -36,6 +37,7 @@
           <td class="star"><i v-for="index in new Array(evalitem.level)" class="glyphicon glyphicon-star"></i></td>
           <td class="text-elipise" v-if="evalitem.content !== ''">{{ evalitem.content }}</td>
           <td class="text-elipise" v-else>系统默认好评</td>
+          <td><router-link :to="{ name: 'GoodDetail', params: {id: evalitem.goodid} }">{{ goods[evalitem.goodid].name }}</router-link></td>
         </tr>
     </tbody>
   </table>
@@ -60,7 +62,8 @@ export default {
     return {
       evals: evals,
       user: this.datum.UserList[this.$route.params.id],
-      users: this.datum.UserList
+      users: this.datum.UserList,
+      goods: this.datum.GoodList
     }
   },
   watch: {

@@ -9,9 +9,9 @@
   </thead>
   <tbody>
       <tr v-for="star in stars">
-        <th><router-link :to="{ name: 'GoodDetail', params: {id: star} }">{{ goods[star].name }}</router-link></th>
-        <td><router-link :to="{ name: 'GoodDetail', params: {id: star} }">￥{{ goods[star].price_sell }}</router-link></td>
-        <td class="text-elipise"><router-link :to="{ name: 'GoodDetail', params: {id: star} }">{{ goods[star].advertising }}</router-link></td>
+        <th class="col-sm-2"><router-link :to="{ name: 'GoodDetail', params: {id: star} }">{{ goods[star].name }}</router-link></th>
+        <td class="col-sm-2"><router-link :to="{ name: 'GoodDetail', params: {id: star} }">￥{{ goods[star].price_sell }}</router-link></td>
+        <td class="text-elipise col-sm-7"><router-link :to="{ name: 'GoodDetail', params: {id: star} }">{{ goods[star].advertising }}</router-link></td>
       </tr>
   </tbody>
 </table>
@@ -34,9 +34,9 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 50vw;
+  max-width: 30vw;
 }
-a{
+td a{
   color: black;
 }
 </style>

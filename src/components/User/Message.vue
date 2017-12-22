@@ -11,9 +11,9 @@
       <table class="table table-hover">
         <tbody>
           <tr>
-            <td class="col-sm-3">买家姓名：{{ users[message.userid].name }}</td>
+            <td class="col-sm-3">买家姓名：<router-link :to="{ name: 'UserView', params: {id: message.userid} }">{{ users[message.userid].name }}</router-link></td>
             <td class="col-sm-4">买家联系方式：{{ users[message.userid].contact }}</td>
-            <td>相关宝贝：{{ goods[message.goodid].name }}</td>
+            <td>相关宝贝：<router-link :to="{ name: 'GoodDetail', params: {id: message.goodid} }">{{ goods[message.goodid].name }}</router-link></td>
           </tr>
         </tbody>
       </table>

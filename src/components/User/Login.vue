@@ -28,7 +28,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" @click="login" class="btn btn-default" id="login-button">登录</button>
+        <button type="button" @click="login" class="btn btn-default" id="login-button">登录</button>
         <router-link :to="{ name: 'Register' }">
           <button type="button" class="btn btn-default">注册</button>
         </router-link>
@@ -63,6 +63,21 @@ export default {
       }
       if (flag === 0) {
         alert('用户名或密码错误')
+      }
+    },
+    keyListener (e) {
+      if (e.keyCode === 13) {
+        this.button.click()
+      }
+    }
+  },
+  mounted () {
+    document.onkeydown = this.keyListener
+    var buttons = document.getElementsByTagName('button')
+    for (var button of buttons) {
+      if (button.innerHTML === '登录') {
+        this.button = button
+        break
       }
     }
   }

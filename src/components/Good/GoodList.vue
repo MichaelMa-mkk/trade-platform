@@ -5,18 +5,12 @@
     <li role="presentation" class="active">
       <router-link :to="{ name: 'GoodAll' }">所有宝贝</router-link>
     </li>
-    <li role="presentation">
-      <router-link :to="{ name: 'Category', params: {category: 1} }">分类1</router-link>
-    </li>
-    <li role="presentation">
-      <router-link :to="{ name: 'Category', params: {category: 2} }">分类2</router-link>
-    </li>
-    <li role="presentation">
-      <router-link :to="{ name: 'Category', params: {category: 3} }">分类3</router-link>
+    <li role="presentation" v-for="category in categories">
+      <router-link :to="{ name: 'Category', params: {category: category.id} }">{{ category.name }}</router-link>
     </li>
   </ul>
-  <div class="col-sm-1"></div>
-  <div class="col-sm-11">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-10">
     <router-view/>
   </div>
 </section>
@@ -27,6 +21,11 @@ import TopNav from '@/components/components/top-nav'
 
 export default {
   name: 'good-list',
+  data () {
+    return {
+      categories: this.datum.CategoryList
+    }
+  },
   components: {
     TopNav
   },

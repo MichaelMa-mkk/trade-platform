@@ -22,7 +22,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" @click="register" class="btn btn-default">提交</button>
+      <button type="button" @click="register" class="btn btn-default">提交</button>
     </div>
   </div>
 </form>
@@ -57,6 +57,21 @@ export default {
           url = url.substring(0, url.length - 8)
           window.location.href = url + 'login'
         }
+      }
+    },
+    keyListener (e) {
+      if (e.keyCode === 13) {
+        this.button.click()
+      }
+    }
+  },
+  mounted () {
+    document.onkeydown = this.keyListener
+    var buttons = document.getElementsByTagName('button')
+    for (var button of buttons) {
+      if (button.innerHTML === '提交') {
+        this.button = button
+        break
       }
     }
   }

@@ -39,9 +39,7 @@
       <label class="col-sm-2 control-label">宝贝分类</label>
       <div class="col-sm-10">
         <select class="form-control" id="category" :value="good.category">
-          <option value="1">分类1</option>
-          <option value="2">分类2</option>
-          <option value="3">分类3</option>
+          <option v-for="category in categories" :value="category.id">{{ category.name }}</option>
         </select>
       </div>
     </div>
@@ -96,7 +94,8 @@ export default {
       good: good,
       login: this.datum.LoginId === good.userid,
       selected: good.status,
-      users: users
+      users: users,
+      categories: this.datum.CategoryList
     }
   },
   methods: {

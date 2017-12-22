@@ -32,15 +32,20 @@ textarea{
   margin-bottom: 5%;
   margin-left: 4%;
   margin-right: 4%;
+  height: 30vw;
 }
 .good-list div img {
-  height: 75%;
+  height: 24vw;
   padding-top: 4%;
-  width: 75%;
+  width: 18vw;
 }
 .good-list div p {
-  height: 15%;
+  height: 10%;
   font-size: 130%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0
 }
 .good-list div strong {
   font-size: 150%;

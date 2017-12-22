@@ -12,7 +12,7 @@
     </thead>
     <tbody>
         <tr v-for="good in goods">
-          <th>{{ good.name }}</th>
+          <th><router-link :to="{ name: 'GoodDetail', params: {id: good.id} }">{{ good.name }}</router-link></th>
           <td>￥{{ good.price_sell }}</td>
           <td class="text-elipise">{{ good.advertising }}</td>
           <td>
@@ -33,7 +33,7 @@
     </thead>
     <tbody>
         <tr v-for="good in ugoods">
-          <th>{{ good.name }}</th>
+          <th><router-link :to="{ name: 'GoodDetail', params: {id: good.id} }">{{ good.name }}</router-link></th>
           <td>￥{{ good.price_sell }}</td>
           <td class="text-elipise">{{ good.advertising }}</td>
           <td>

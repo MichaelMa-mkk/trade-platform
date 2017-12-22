@@ -15,7 +15,7 @@
     <table class="table table-hover">
       <tbody>
         <tr>
-          <th class="col-sm-2">{{ good.name }}</th>
+          <th class="col-sm-2"><router-link :to="{ name: 'GoodDetail', params: {id: good.id} }">{{ good.name }}</router-link></th>
           <td class="col-sm-2">￥{{ good.price_sell }}</td>
           <td class="col-sm-7 text-elipise">{{ good.advertising }}</td>
           <td>
@@ -64,7 +64,7 @@
     <table class="table table-hover">
       <tbody>
         <tr>
-          <th class="col-sm-2">{{ good.name }}</th>
+          <th class="col-sm-2"><router-link :to="{ name: 'GoodDetail', params: {id: good.id} }">{{ good.name }}</router-link></th>
           <td class="col-sm-2">￥{{ good.price_sell }}</td>
           <td class="col-sm-7 text-elipise">{{ good.advertising }}</td>
           <td>

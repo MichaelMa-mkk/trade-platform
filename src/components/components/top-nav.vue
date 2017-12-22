@@ -20,6 +20,12 @@
             <p>我的</p>
           </a>
         </li>
+        <li :class="search">
+          <router-link :to="{ name: 'Search' }">
+            <i class="glyphicon glyphicon-search"></i>
+            <p>搜索</p>
+          </router-link>
+        </li>
       </ul>
     </div>
   </div>
@@ -32,7 +38,8 @@ export default {
   props: [
     'home',
     'news',
-    'personal'
+    'personal',
+    'search'
   ],
   data () {
     var tot = 0
