@@ -1,3 +1,10 @@
+# trade-platform
+
+> 二手交易平台（2017.12.25软件工程实践创新project）
+> 前端框架：Vue
+> 后端：尚未开发（应该永远不会开发了）
+> 功能：可以在不刷新的情况下完成购物网站完整的功能，但是不能退出登录
+
 # Requirements
 
 ## npm
@@ -32,10 +39,6 @@ cd my-project "project_name"
 npm install
 npm run dev
 ```
-
-# newuser
-
-> A Vue.js project
 
 ## Build Setup
 
@@ -100,7 +103,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 &emsp;│&emsp;│  
 &emsp;│&emsp;│──main.js
 
-## Vue Structure & Some Usage
+## Vue Structure & Some Usages
+
+*许多用法待完善*
 
 ```html
 <template>
