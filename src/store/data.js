@@ -187,7 +187,7 @@ var CategoryList = [
   {
     name: '衣物鞋帽',
     id: 9
-},
+  },
   {
     name: '其他',
     id: 10

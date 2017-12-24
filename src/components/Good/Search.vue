@@ -114,7 +114,7 @@ export default {
   margin-bottom: 5%;
 }
 .col-sm-4{
-  margin-left: 12%;
-  margin-right: 2%;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 </style>
